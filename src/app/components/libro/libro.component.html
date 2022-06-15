@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libros</title>
+</head>
+<body style="background-color: rgb(255, 229, 189);">
+    <div class="container text-center">
+        <div class="row">
+            <div class="col-md3">
+                <figure>
+                    <style>
+                        .imagen{
+                            max-width: 300px;
+                            max-height: 300px;
+                            min-width: 150px;
+                            min-height: 200px;
+                            padding: 20px;
+                        }
+                        .boton{
+                            margin: 10px;
+                        }
+                     </style>
+                    <br><br>
+                     <div class="card" style="width: 30rem; margin: 30px;display:block;
+                     margin:auto; background-color: rgb(247, 215, 111);">
+                        <img src="{{libro.imagen}}" class="card-img-top imagen" alt="...">
+                        <div class="card-body" style="background-color: rgb(247, 215, 111);">
+                        <h4 class="text-center">{{libro.titulo}}</h4>
+                          <p class="card-text">{{libro.descripcion}}</p>
+                          <p class="card-text">Stock: {{libro.stock}}</p>
+                        </div>
+                      </div>
+                     
+                </figure>
+            
+            </div>
+        </div>
+        <button (click)="anterior()" type="button" class="btn btn-warning boton">Anterior</button>
+        <button (click)="siguiente()" type="button" class="btn btn-warning boton">Siguiente</button>
+    
+    </div>
+    <br><br>
+</body>
+</html>

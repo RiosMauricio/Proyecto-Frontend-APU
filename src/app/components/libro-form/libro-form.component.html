@@ -1,0 +1,30 @@
+
+<div class="fondo">
+    <body>
+        <section class="form-register">
+            <h4 class="text-center">Carga de Libro </h4>
+            <div>
+                <input class="controls" type="text" name="titulo" id="titulo" placeholder="Ingrese Titulo del libro" [(ngModel)]="libro.titulo">
+            </div>
+
+            <div>
+                <input class="controls" type="text" name="descripcion" id="descripcion" placeholder="Ingrese Descripcion" [(ngModel)]="libro.descripcion">
+            </div>
+
+            <div>
+                <input class="controls" type="text" name="imagen" id="imagen" placeholder="Ingrese enlace de imagen" [(ngModel)]="libro.imagen">
+            </div>
+
+            <div>
+                <input class="controls" type="number" name="stock" id="stock" placeholder="Ingrese Stock" [(ngModel)]="libro.stock">
+            </div>
+            
+            <p>¿Desea agregar el libro a destacados?</p>
+            <div>
+                <label class="checkeo text-center" >Sí<input type="radio" value="true" name="destacado" [(ngModel)]="libro.destacado"></label>
+                <label class="checkeo text-center">No<input type="radio" value="false" name="destacado1" [(ngModel)]="libro.destacado"></label>
+            </div>
+            <input class="botons" type="submit" value="Cargar Libro" (click)="crearLibro()"> 
+        </section>
+    </body>
+</div>
