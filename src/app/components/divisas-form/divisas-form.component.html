@@ -1,0 +1,41 @@
+    <div class="formulario">
+        <section class="col-md-4 col-sm-12 text-center p-5">
+            <form method="post">
+                <h4>Conversor de Divisas</h4>
+                <div class="mb-3">
+                <label for="IngresarCantidad" class="form-label">Cantidad</label>
+                <input type="number" name ="cantidad" class="form-control" id="cantidadOrigen"
+                placeholder="Cantidad" [(ngModel)]="cant" (change)="habilitarBoton()">
+
+                </div>
+                <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">De</label>
+                    <select name="desde" id="desde" class="form-control" [(ngModel)]="desde" (change)="habilitarBoton()">
+                        <option value="USD">Dolar</option>
+                        <option value="EUR">Euro</option>
+                        <option value="ARS">Peso (ARG)</option>
+                    </select>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputPassword1" class="form-label">A</label>
+                    <select name="hacia" id="hacia" class="form-control" [(ngModel)]="hacia" (change)="habilitarBoton()">
+                            <option value="USD">Dolar</option>
+                            <option value="EUR">Euro</option>
+                            <option value="ARS">Peso (ARG)</option>
+                    </select>
+                </div>  
+                <div>
+                    <label for="IngresarEmail" class="form-label">Ingrese su Email</label>
+                    <input type="mail" name ="email" class="form-control" id="email" placeholder="ejemplo@email.com" 
+                        [(ngModel)]="transaccion.emailCliente" (change)="habilitarBoton()">
+                </div>
+                <br>
+                <div class="mb-3">
+                    <label for="Resultado" class="form-label">Resultado</label>
+                    <label class="resultado">{{conversion.result}}</label>
+                </div>
+                <button type="submit" id="btn" class="btn btn-warning" (click)="convertirGuardar()" [disabled]="habilitar == false">Convertir</button>
+            </form>
+        </section>
+    </div>
+

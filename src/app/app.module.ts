@@ -10,6 +10,8 @@ import { LibroComponent } from './components/libro/libro.component';
 import { HeaderComponent } from './components/layout/header/header.component';
 import { FooterComponent } from './components/layout/footer/footer.component';
 import { LibroFormComponent } from './components/libro-form/libro-form.component';
+import { DivisasFormComponent } from './components/divisas-form/divisas-form.component';
+import { DivisasComponent } from './components/divisas/divisas.component';
 
 
 @NgModule({
@@ -17,7 +19,7 @@ import { LibroFormComponent } from './components/libro-form/libro-form.component
     AppComponent,
     LibroComponent,
     HeaderComponent, 
-    FooterComponent, LibroFormComponent
+    FooterComponent, LibroFormComponent, DivisasFormComponent, DivisasComponent
   ],
   imports: [
     BrowserModule,
