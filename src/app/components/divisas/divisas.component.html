@@ -1,1 +1,80 @@
-<p>divisas works!</p>
+<div class="container">
+    <div *ngIf="i3==true">
+        <h3 class="text-center">Listado de todas las Transacciones</h3>
+        <table class="table">
+            <thead>
+            <tr>
+                <th scope="col">Cantidad ingresada</th>
+                <th scope="col">Moneda de Origen</th>
+                <th scope="col">Moneda de destino</th>
+                <th scope="col">Resultado de conversion</th>
+                <th scope="col">Email del cliente</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr *ngFor= "let tr of transacciones">
+                <td>${{tr.cantidadOrigen}}</td>
+                <td>{{tr.monedaOrigen}}</td>
+                <td>{{tr.monedaDestino}}</td>
+                <td>${{tr.cantidadDestino}}</td>
+                <td>{{tr.emailCliente}}</td>
+            </tr>
+            </tbody>
+        </table>
+        <button type="button" class="btn btn-secondary btn-lg btn-block" style="width: 100%;" 
+            (click)="habilitarFiltros()">Filtrar Según moneda</button>
+        <br><br>
+    </div>
+
+
+    <div *ngIf="i1 == true">
+        <label for="categoriaPasajero">Seleccione moneda de Origen</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="moOrigen"
+         id="categoriaPasajero" name="categoriaPasajero">
+            <option value="USD">USD (Dolares Estado Unidenses)</option>
+            <option value="EUR">EUR (Euros)</option>
+            <option value="ARS">ARS (Pesos Argentinos)</option>
+        </select><br>
+
+
+        <label for="categoriaPasajero">Seleccione moneda de Destino</label>
+        <select class="form-select" aria-label="Default select example" [(ngModel)]="moDestino"
+         id="categoriaPasajero" name="categoriaPasajero">
+            <option value="USD">USD (Dolares Estado Unidenses)</option>
+            <option value="EUR">EUR (Euros)</option>
+            <option value="ARS">ARS (Pesos Argentinos)</option>
+        </select> <br>
+        <button type="button" class="btn btn-secondary btn-lg btn-block" style="width: 100%;" 
+        (click)="filtrarTransacciones()">Filtrar</button> <br><br><br><br>
+
+        <div *ngIf="i2==true">
+            <h3 class="text-center">Listado de todas las Transacciones</h3>
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th scope="col">Cantidad ingresada</th>
+                        <th scope="col">Moneda de Origen</th>
+                        <th scope="col">Moneda de destino</th>
+                        <th scope="col">Resultado de conversion</th>
+                        <th scope="col">Email del cliente</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr *ngFor= "let fil of transaccionesFiltradas">
+                        <td>${{fil.cantidadOrigen}}</td>
+                        <td>{{fil.monedaOrigen}}</td>
+                        <td>{{fil.monedaDestino}}</td>
+                        <td>${{fil.cantidadDestino}}</td>
+                        <td>{{fil.emailCliente}}</td>
+                    </tr>
+                    </tbody>
+                </table> 
+        </div>
+        <button type="button" class="btn btn-secondary btn-lg btn-block" style="width: 100%;" 
+        onClick="window.location.reload();" *ngIf="i4==true">Volver a Mostrar Todas las Transacciones</button>
+            <br><br><br>
+     </div>
+
+
+
+</div>

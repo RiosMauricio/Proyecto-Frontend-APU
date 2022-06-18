@@ -42,4 +42,24 @@ export class DivisasService {
     
     return this._http.post(this.baseURL, datos, options);
   }
+
+  getTransacciones(): Observable<any>{
+    const options = {
+      method: "POST",
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+      })
+    }
+    return this._http.get(this.baseURL, options)
+  }
+
+  getTransaccionesOrigenDestino(m1: string, m2: string){
+    const options = {
+      method: "POST",
+      headers: new HttpHeaders({
+        "Content-Type": "application/json",
+      })
+    }
+    return this._http.get(this.baseURL+'/moneda/'+ m1 + '/' + m2, options)
+  }
 }
