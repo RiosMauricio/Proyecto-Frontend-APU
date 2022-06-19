@@ -1,1 +1,99 @@
-<p>pasaje works!</p>
+<div class="container"> <br>
+        <div *ngIf="h3==true"> 
+        <h3 class="text-center">Listado de todos los Pasajes</h3>
+            <table class="table">
+                <thead>
+                <tr>
+                    <th scope="col">Precio</th>
+                    <th scope="col">Categoria</th>
+                    <th scope="col">Fecha de compra</th>
+                    <th scope="col">Pasajero</th>
+                    <th scope="col">Opciones</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor= "let pas of pasajes">
+                    <td>${{pas.precioPasaje}}</td>
+                    <td>{{pas.categoriaPasajero}}</td>
+                    <td>{{pas.fechaCompra | date}}</td>
+                    <td>{{pas.pasajero.email}}</td>
+                    <button type="edit" class="btn btn-primary" style="margin: 5px; color: rgb(0, 0, 0)" (click)="seleccionarPasaje(pas)">Editar</button>
+                    <button type="delete" class="btn btn-danger" style="margin: 5px; color: rgb(0, 0, 0)" 
+                        (click)="eliminarPasaje(pas)"  onClick="window.location.reload();">Eliminar</button>
+                </tr>
+                </tbody>
+            </table> 
+                <button type="button" class="btn btn-secondary btn-lg btn-block" style="width: 100%;" 
+                    (click)="habilitarFiltros()">Filtrar Pasajes</button>
+            </div>
+            <div *ngIf="h1==true"><br>
+                <label for="IngresarCategoria" class="form-label">Categoria del Pasajero</label>
+                <select name="categoria" id="categoria" class="form-control" [(ngModel)]="cate">
+                    <option value="A">Adulto</option>
+                    <option value="M">Menor</option>
+                    <option value="J">Jubilado</option>
+                </select><br>
+                <button type="button" class="btn btn-secondary btn-lg btn-block" style="width: 100%;" 
+                (click)="filtrarPasajes()">Ver Resultados</button> <br><br>
+            </div>  
+                <div *ngIf="h2==true">
+                    <h3 class="text-center">Listado de Pasajes Filtrados</h3>
+                    <table class="table">
+                        <thead>
+                        <tr>
+                            <th scope="col">Precio</th>
+                            <th scope="col">Categoria</th>
+                            <th scope="col">Fecha de compra</th>
+                            <th scope="col">Email del Pasajero</th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor= "let pas1 of pasajesFiltrados">
+                            <td>${{pas1.precioPasaje}}</td>
+                            <td>{{pas1.categoriaPasajero}}</td>
+                            <td>{{pas1.fechaCompra}}</td>
+                            <td>{{pas1.pasajero.email}}</td>
+                        </tr>
+                        </tbody>
+                    </table> 
+                    <button type="button" class="btn btn-secondary btn-lg btn-block" style="width: 100%;" 
+                    onClick="window.location.reload();">Volver a Mostrar Todas las Transacciones</button>
+                        <br><br><br>
+                </div><br><br>
+
+                <div *ngIf="h4 == true">
+                    <form method="post">
+                        <h4 class="text-center">Editar Pasaje</h4>
+                        <div class="mb-3">
+
+                        <label for="IngresarPrecio" class="form-label">Precio</label>
+                        <input type="number" name ="precio" class="form-control" id="precio"
+                        placeholder="Ingrese Precio del pasaje" [(ngModel)]="pasaje.precioPasaje">
+            
+                        </div>
+                        <div class="mb-3">
+                        <label for="IngresarCategoria" class="form-label">Categoria del Pasajero</label>
+                            <select name="categoria" id="categoria" class="form-control" [(ngModel)]="pasaje.categoriaPasajero">
+                                <option value="A">Adulto</option>
+                                <option value="M">Menor</option>
+                                <option value="J">Jubilado</option>
+                            </select>
+                        </div>
+            
+                        <div class="mb-3">
+                        <label for="IngresarPasajero" class="form-label">Seleccione pasajero</label>
+                            <select name="pasajero" id="pasajero" class="form-control" [(ngModel)]="nom">
+                                <option *ngFor="let per of personas" value="{{per.nombre}}">{{per.nombre}}</option>
+                            </select>
+                        </div>
+            
+                        <div>
+                            <label for="IngresarFecha" class="form-label">Fecha</label>
+                            <input type="date" name ="fecha" class="form-control" id="fecha" [(ngModel)]="pasaje.fechaCompra">
+                        </div>
+                        <br>
+                        <button type="submit" id="btn" class="btn btn-warning" (click)="editarPasaje()" onClick="window.location.reload();">Actualizar Pasaje</button><br><br><br>
+                    </form>
+               </div>
+
+</div>

@@ -48,9 +48,16 @@ export class PasajeFormComponent implements OnInit {
       console.log("Funciona Igual")
     }
     console.log(this.persona)
-
-    this.pasaje.precioPasaje = this.precio; 
-    this.pasaje.categoriaPasajero = this.categoria; 
+    this.pasaje.categoriaPasajero = this.categoria;
+    if(this.categoria == 'A'){
+      this.pasaje.precioPasaje = this.precio;
+    }
+    if(this.categoria == 'J'){
+      this.pasaje.precioPasaje = this.precio-((this.precio*50)/100);
+    }  
+    if(this.categoria == 'M'){
+      this.pasaje.precioPasaje = this.precio-((this.precio*25)/100);
+    }
     this.pasaje.fechaCompra = this.fechaC;
     this.pasaje.pasajero = this.persona; 
 

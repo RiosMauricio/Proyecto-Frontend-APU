@@ -27,15 +27,16 @@ export class PasajeService {
 
   }
 
-  editPasaje(id: string): Observable<any>{
+  editPasaje(pasaje: Pasaje): Observable<any>{
     const options = {
       method: "PUT",
       headers: new HttpHeaders({
         "Content-Type": "application/json",
       })
     }
-    return this._http.put(this.baseURL +'/'+id , options)
+    const datos = JSON.stringify(pasaje);
 
+    return this._http.put(this.baseURL +'/'+pasaje._id , datos, options)
   }
 
   getPasajes(): Observable<any>{
@@ -58,14 +59,14 @@ export class PasajeService {
     return this._http.get(this.baseURL +'/'+cat , options)
   }
 
-  deletePasaje(id: string): Observable<any>{
+  deletePasaje(pasaje: Pasaje): Observable<any>{
     const options = {
       method: "DELETE",
       headers: new HttpHeaders({
         "Content-Type": "application/json",
       })
     }
-    return this._http.delete(this.baseURL +'/'+ id , options);
+    return this._http.delete(this.baseURL+'/'+ pasaje._id, options);
   }
 
   getPersonas(): Observable <any>{

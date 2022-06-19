@@ -6,6 +6,7 @@ import { LibroFormComponent } from './components/libro-form/libro-form.component
 import { DivisasFormComponent } from './components/divisas-form/divisas-form.component';
 import { DivisasComponent } from './components/divisas/divisas.component';
 import { PasajeFormComponent } from './components/pasaje-form/pasaje-form.component';
+import { PasajeComponent } from './components/pasaje/pasaje.component';
 
 
 const routes: Routes = [
@@ -13,7 +14,8 @@ const routes: Routes = [
   {path: 'libro-form', component: LibroFormComponent},
   {path: 'divisas-form', component: DivisasFormComponent},
   {path: 'divisas', component: DivisasComponent},
-  {path: 'pasajes-form', component: PasajeFormComponent}
+  {path: 'pasajes-form', component: PasajeFormComponent},
+  {path: 'pasajes', component: PasajeComponent}
 ];
 
 @NgModule({
