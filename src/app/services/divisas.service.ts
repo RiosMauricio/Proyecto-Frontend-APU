@@ -45,7 +45,7 @@ export class DivisasService {
 
   getTransacciones(): Observable<any>{
     const options = {
-      method: "POST",
+      method: "GET",
       headers: new HttpHeaders({
         "Content-Type": "application/json",
       })
@@ -55,7 +55,7 @@ export class DivisasService {
 
   getTransaccionesOrigenDestino(m1: string, m2: string){
     const options = {
-      method: "POST",
+      method: "GET",
       headers: new HttpHeaders({
         "Content-Type": "application/json",
       })

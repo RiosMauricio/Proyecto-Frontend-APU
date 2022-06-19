@@ -1,0 +1,36 @@
+<div class="formulario">
+    <section class="col-md-4 col-sm-12 text-center p-5">
+        <form method="post">
+            <h4>Carga de un Pasaje</h4>
+            <div class="mb-3">
+            <label for="IngresarPrecio" class="form-label">Precio</label>
+            <input type="number" name ="precio" class="form-control" id="precio"
+            placeholder="Ingrese Precio del pasaje" [(ngModel)]="precio">
+
+            </div>
+            <div class="mb-3">
+            <label for="IngresarCategoria" class="form-label">Categoria del Pasajero</label>
+                <select name="categoria" id="categoria" class="form-control" [(ngModel)]="categoria">
+                    <option value="A">Adulto</option>
+                    <option value="M">Menor</option>
+                    <option value="J">Jubilado</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+            <label for="IngresarPasajero" class="form-label">Seleccione pasajero</label>
+                <select name="pasajero" id="pasajero" class="form-control" [(ngModel)]="nom">
+                    <option *ngFor="let per of personas" value="{{per.nombre}}">{{per.nombre}}</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="IngresarFecha" class="form-label">Fecha</label>
+                <input type="date" name ="fecha" class="form-control" id="fecha" [(ngModel)]="fechaC">
+            </div>
+            <br>
+            <button type="submit" id="btn" class="btn btn-warning" (click)="crearPasaje()">Cargar</button>
+        </form>
+    </section>
+</div>
+

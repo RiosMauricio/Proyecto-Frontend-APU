@@ -12,6 +12,8 @@ import { FooterComponent } from './components/layout/footer/footer.component';
 import { LibroFormComponent } from './components/libro-form/libro-form.component';
 import { DivisasFormComponent } from './components/divisas-form/divisas-form.component';
 import { DivisasComponent } from './components/divisas/divisas.component';
+import { PasajeFormComponent } from './components/pasaje-form/pasaje-form.component';
+import { PasajeComponent } from './components/pasaje/pasaje.component';
 
 
 @NgModule({
@@ -19,7 +21,7 @@ import { DivisasComponent } from './components/divisas/divisas.component';
     AppComponent,
     LibroComponent,
     HeaderComponent, 
-    FooterComponent, LibroFormComponent, DivisasFormComponent, DivisasComponent
+    FooterComponent, LibroFormComponent, DivisasFormComponent, DivisasComponent, PasajeFormComponent, PasajeComponent
   ],
   imports: [
     BrowserModule,

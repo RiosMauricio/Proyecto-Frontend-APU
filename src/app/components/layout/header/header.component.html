@@ -1,43 +1,50 @@
 <header>
     <nav class="navbar navbar-expand-lg navbar-light bg-warning">
       <div class="container-fluid">
-        <a class="navbar-brand" href="#">Tp-Angular</a>
+        <a class="navbar-brand" href="#">Tp-BackAndFront</a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNavDropdown">
           <ul class="navbar-nav">
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Menu Libros
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li class="nav-item">
-                <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['libro']">Ver Libros</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['libro-form']">Agregar Libros</a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              Menu Divisas
-            </a>
-            <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-              <li class="nav-item">
-                <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['divisas-form']">Calcular Divisas</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['divisas']">Ver Transacciones</a>
-              </li>
-            </ul>
-          </li>
-            <li class="nav-item">
-              <a class="nav-link " routerLinkActive="active"  aria-current="page" >Punto3</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu Libros
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="nav-item">
+                  <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['libro']">Ver Libros</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['libro-form']">Agregar Libros</a>
+                </li>
+              </ul>
             </li>
-            <li class="nav-item">
-              <a class="nav-link " routerLinkActive="active"  aria-current="page"  >About</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu Divisas
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="nav-item">
+                  <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['divisas-form']">Calcular Divisas</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['divisas']">Ver Transacciones</a>
+                </li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Menu Pasajes
+              </a>
+              <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <li class="nav-item">
+                  <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['pasajes-form']">Cargar Pasaje</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link " routerLinkActive="active"  aria-current="page"  [routerLink]="['pasajes']">Ver Pasajes</a>
+                </li>
+              </ul>
             </li>
           </ul>
         </div>

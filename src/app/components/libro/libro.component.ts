@@ -26,6 +26,7 @@ export class LibroComponent implements OnInit {
     if (this.indice < this.libros.length){
       this.libro = this.libros[this.indice];
     }
+    console.log(this.libros)
   }
 
   siguiente(){
