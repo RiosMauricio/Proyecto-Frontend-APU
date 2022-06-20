@@ -8,7 +8,7 @@ import { LibroService } from 'src/app/services/libro.service';
   styleUrls: ['./libro-form.component.css']
 })
 export class LibroFormComponent implements OnInit {
-
+  habilitar: boolean = false;
   libro = new Libro; 
   constructor(private libroService:LibroService) { 
     this.libro = new Libro();
@@ -21,6 +21,12 @@ export class LibroFormComponent implements OnInit {
     this.libroService.createLibro(this.libro).subscribe((result: any)=>{
       console.log(result);
     })
+  }
+
+  habilitarBoton(){
+    if (this.libro.titulo && this.libro.descripcion && this.libro.imagen && this.libro.stock > 0 && this.libro.destacado){
+      this.habilitar = true; 
+    }
   }
 
 }

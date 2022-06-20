@@ -4,27 +4,27 @@
         <section class="form-register">
             <h4 class="text-center">Carga de Libro </h4>
             <div>
-                <input class="controls" type="text" name="titulo" id="titulo" placeholder="Ingrese Titulo del libro" [(ngModel)]="libro.titulo">
+                <input class="controls" type="text" name="titulo" id="titulo" placeholder="Ingrese Titulo del libro" [(ngModel)]="libro.titulo" (change)="habilitarBoton()">
             </div>
 
             <div>
-                <input class="controls" type="text" name="descripcion" id="descripcion" placeholder="Ingrese Descripcion" [(ngModel)]="libro.descripcion">
+                <input class="controls" type="text" name="descripcion" id="descripcion" placeholder="Ingrese Descripcion" [(ngModel)]="libro.descripcion" (change)="habilitarBoton()">
             </div>
 
             <div>
-                <input class="controls" type="text" name="imagen" id="imagen" placeholder="Ingrese enlace de imagen" [(ngModel)]="libro.imagen">
+                <input class="controls" type="text" name="imagen" id="imagen" placeholder="Ingrese enlace de imagen" [(ngModel)]="libro.imagen" (change)="habilitarBoton()">
             </div>
 
             <div>
-                <input class="controls" type="number" name="stock" id="stock" placeholder="Ingrese Stock" [(ngModel)]="libro.stock">
+                <input class="controls" type="number" name="stock" id="stock" placeholder="Ingrese Stock" [(ngModel)]="libro.stock" (change)="habilitarBoton()">
             </div>
             
             <p>¿Desea agregar el libro a destacados?</p>
             <div>
-                <label class="checkeo text-center" >Sí<input type="radio" value="true" name="destacado" [(ngModel)]="libro.destacado"></label>
-                <label class="checkeo text-center">No<input type="radio" value="false" name="destacado1" [(ngModel)]="libro.destacado"></label>
+                <label class="checkeo text-center" >Sí<input type="radio" value="true" name="destacado" [(ngModel)]="libro.destacado" (change)="habilitarBoton()"></label>
+                <label class="checkeo text-center">No<input type="radio" value="false" name="destacado1" [(ngModel)]="libro.destacado" (change)="habilitarBoton()"></label>
             </div>
-            <input class="botons" type="submit" value="Cargar Libro" (click)="crearLibro()"> 
+            <button type="submit" id="btn" class="botones" (click)="crearLibro()" [disabled]="habilitar == false">Agregar Libro</button>
         </section>
     </body>
 </div>

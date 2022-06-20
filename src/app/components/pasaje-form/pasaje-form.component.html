@@ -5,12 +5,12 @@
             <div class="mb-3">
             <label for="IngresarPrecio" class="form-label">Precio</label>
             <input type="number" name ="precio" class="form-control" id="precio"
-            placeholder="Ingrese Precio del pasaje" [(ngModel)]="precio">
+            placeholder="Ingrese Precio del pasaje" [(ngModel)]="precio" (change)="habilitarBoton()">
 
             </div>
             <div class="mb-3">
             <label for="IngresarCategoria" class="form-label">Categoria del Pasajero</label>
-                <select name="categoria" id="categoria" class="form-control" [(ngModel)]="categoria">
+                <select name="categoria" id="categoria" class="form-control" [(ngModel)]="categoria" (change)="habilitarBoton()">
                     <option value="A">Adulto</option>
                     <option value="M">Menor</option>
                     <option value="J">Jubilado</option>
@@ -19,17 +19,17 @@
 
             <div class="mb-3">
             <label for="IngresarPasajero" class="form-label">Seleccione pasajero</label>
-                <select name="pasajero" id="pasajero" class="form-control" [(ngModel)]="nom">
+                <select name="pasajero" id="pasajero" class="form-control" [(ngModel)]="nom" (change)="habilitarBoton()">
                     <option *ngFor="let per of personas" value="{{per.nombre}}">{{per.nombre}}</option>
                 </select>
             </div>
 
             <div>
                 <label for="IngresarFecha" class="form-label">Fecha</label>
-                <input type="date" name ="fecha" class="form-control" id="fecha" [(ngModel)]="fechaC">
+                <input type="date" name ="fecha" class="form-control" id="fecha" [(ngModel)]="fechaC" (change)="habilitarBoton()">
             </div>
             <br>
-            <button type="submit" id="btn" class="btn btn-warning" (click)="crearPasaje()">Cargar</button> <br>
+            <button type="submit" id="btn" class="btn btn-warning" (click)="crearPasaje()" [disabled]="habilitar == false">Cargar</button> <br>
             <a href="/pasajes" style="color: black">Ver Listado de Pasajes</a>
         </form>
     </section>

@@ -18,6 +18,7 @@ export class PasajeFormComponent implements OnInit {
   precio!: number; 
   categoria!: string; 
   fechaC!: Date; 
+  habilitar: boolean=false; 
   
   constructor(private pasajeService:PasajeService) { 
     this.pasaje = new Pasaje(); 
@@ -29,8 +30,6 @@ export class PasajeFormComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    
-     
   }
 
   crearPasaje()
@@ -66,6 +65,10 @@ export class PasajeFormComponent implements OnInit {
      console.log(data); })
   }
 
- 
+  habilitarBoton(){
+    if (this.nom && this.precio > 0 && this.categoria && this.fechaC){
+      this.habilitar = true; 
+    }
+  }
 
 }
