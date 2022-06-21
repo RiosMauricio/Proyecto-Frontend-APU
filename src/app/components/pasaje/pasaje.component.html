@@ -16,7 +16,7 @@
                     <td>${{pas.precioPasaje}}</td>
                     <td>{{pas.categoriaPasajero}}</td>
                     <td>{{pas.fechaCompra | date}}</td>
-                    <td>{{pas.pasajero.email}}</td>
+                    <td>{{pas.pasajero.nombre}}</td>
                     <button type="edit" class="btn btn-primary" style="margin: 5px; color: rgb(0, 0, 0)" (click)="seleccionarPasaje(pas)">Editar</button>
                     <button type="delete" class="btn btn-danger" style="margin: 5px; color: rgb(0, 0, 0)" 
                         (click)="eliminarPasaje(pas)"  onClick="window.location.reload();">Eliminar</button>
@@ -57,7 +57,7 @@
                         </tbody>
                     </table> 
                     <button type="button" class="btn btn-secondary btn-lg btn-block" style="width: 100%;" 
-                    onClick="window.location.reload();">Volver a Mostrar Todas las Transacciones</button>
+                    onClick="window.location.reload();">Volver a Mostrar Todos los pasajes registrados</button>
                         <br><br><br>
                 </div><br><br>
 

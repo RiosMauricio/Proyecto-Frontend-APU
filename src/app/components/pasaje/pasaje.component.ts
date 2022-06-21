@@ -66,7 +66,6 @@ export class PasajeComponent implements OnInit {
       for(i=0; i<=this.personas.length; i++)
       {
         if (this.nom==this.personas[i].nombre){
-          this.persona=this.personas[i]
           Object.assign(this.persona, this.personas[i])
         }
       }
@@ -82,8 +81,9 @@ export class PasajeComponent implements OnInit {
     if(this.pasaje.categoriaPasajero == 'M'){
       this.pasaje.precioPasaje = this.pasaje.precioPasaje-((this.pasaje.precioPasaje*25)/100);
     }
+    this.pasaje.pasajero = this.persona; 
     this.pasajeService.editPasaje(this.pasaje).subscribe((data) => {
-      console.log(data);})
+      Object.assign(this.pasaje, data);})
   }
 
 }
